@@ -2,8 +2,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const CORS = require('cors')
-
-
+const env = require('dotenv')
+env.config({})
 // create app throught it 
 const app=express()
 
@@ -64,9 +64,9 @@ app.post('/send-message' , (req,res)=>{
 
 
 // create app listener using app.listen ()-- this will be listening to all service requests
-app.listen(8000,()=>{
+app.listen(process.env.PORT || 8080,()=>{
 
-    console.log("Server Started at http://localhost:8000")
+    console.log("Server Started at http://localhost:8080")
 
 
 })
