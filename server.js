@@ -1,7 +1,6 @@
 // require express first 
 const express = require('express')
 const mongoose = require('mongoose')
-const Data = require('./Data')
 const CORS = require('cors')
 
 
@@ -24,6 +23,7 @@ mongoose.connect('mongodb+srv://Ankush:issoburrito123@cluster0.19pcgij.mongodb.n
   console.log("error while connecting ", err)
 })
 
+const Message = require('./message')
 
 
 // lets create a route for storing message into db from frontend
@@ -40,7 +40,7 @@ app.post('/send-message' , (req,res)=>{
     // console.log(req.body)
     const data = req.body
 
-    Data.create(data)
+    Message.create(data)
     .then(response=>{
       console.log("inserted success")
       res.status(200).send(
