@@ -24,7 +24,7 @@ mongoose.connect('mongodb+srv://Ankush:issoburrito123@cluster0.19pcgij.mongodb.n
 })
 
 const Message = require('./message')
-app.use('/',(req,res)=>{
+app.get('/',(req,res)=>{
   res.send('App is working 😀')
 })
 
