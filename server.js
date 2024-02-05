@@ -24,7 +24,9 @@ mongoose.connect('mongodb+srv://Ankush:issoburrito123@cluster0.19pcgij.mongodb.n
 })
 
 const Message = require('./message')
-
+app.use('/',(req,res)=>{
+  res.send('App is working 😀')
+})
 
 // lets create a route for storing message into db from frontend
 // "/send-message"
